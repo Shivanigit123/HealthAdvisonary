@@ -40,16 +40,16 @@ public class HealthAdvisorImpl implements HealthAdvisor{
 
 	@Override
 	public String checkSleepingLevel(int age, int sleepingHours) {
-		String msg =null;
+		String msg = null;
 		int adequateSleepHour = age<=5?12:age<=18?10:8;
     	int differenceHour = adequateSleepHour-sleepingHours;
     	System.out.println("Adequate hours:"+adequateSleepHour +" diff: "+differenceHour);
-    	if(differenceHour ==0) {
-    		System.out.println("You are taking good sleep, keep it up.");
+    	if(differenceHour == 0) {
+    		msg = Constants.Msg.MSG_GOOD_SLEEP;
     	}else if(differenceHour <0) {
-    		System.out.println("You need to reduce sleep hours by "+(sleepingHours+differenceHour)+" hours for maintaining good health.");
+    		msg = Constants.Msg.MSG_REDUCE_PRE+(sleepingHours+differenceHour)+ Constants.Msg.MSG_REDUCE_POST;
     	}else {
-    		System.out.println("You need to sleep for "+differenceHour+" more hours.");
+    		msg = Constants.Msg.MSG_SLEEP_MORE_PRE +differenceHour+ Constants.Msg.MSG_SLEEP_MORE_POST;
     		
     	}
 		return msg;

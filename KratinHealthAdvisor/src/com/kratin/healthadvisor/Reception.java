@@ -3,6 +3,7 @@ package com.kratin.healthadvisor;
 import java.util.Scanner;
 
 import com.kratin.healthadvisor.services.Manager;
+import com.kratin.healthadvisor.util.Constants;
 public class Reception {
 	Manager manager = new Manager();
 
@@ -18,6 +19,7 @@ public class Reception {
 	}
 
 	void showMainMenu(Reception reception) {
+		//String str = null;
 		System.out.println("Press 1 to Register");
 		System.out.println("Press 2 to Login");
 		System.out.println("Press 0 to Exit");
@@ -46,10 +48,10 @@ public class Reception {
 	}
 
 	String registration() {
-		System.out.println("Enter Your Name ");
+		String msg=null;
 		Scanner sc = new Scanner(System.in);
 		String enteredName = sc.nextLine();
-		System.out.println("Enter your dateOfBirth");
+		System.out.println("Enter your Date Of Birth");
 		String enteredDateOfBirth = sc.next();
 		System.out.println("Create Password");
 		String enteredPass = sc.next();
