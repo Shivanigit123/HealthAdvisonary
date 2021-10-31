@@ -83,6 +83,9 @@ public class Manager {
 	public String measureOxygenLevel(int oxyLevel){
 		return advisor.checkOxygenLevel(oxyLevel);
 	}
+	public String measureSleepingLevel(int age,int sleepHour) {
+		return advisor.checkSleepingLevel(age,sleepHour);
+	}
 	
 
 }

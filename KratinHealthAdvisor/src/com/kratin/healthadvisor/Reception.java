@@ -3,7 +3,6 @@ package com.kratin.healthadvisor;
 import java.util.Scanner;
 
 import com.kratin.healthadvisor.services.Manager;
-
 public class Reception {
 	Manager manager = new Manager();
 
@@ -109,6 +108,10 @@ public class Reception {
 			System.out.println(reception.measureOxygenLevel());
 			reception.showMainMenu(reception);
 			break;
+		case 3:
+			System.out.println(reception.measureSleepingLevel());
+			reception.onSucessLogin(reception);
+			break;
 		case 9:
 			manager.showRegister();
 			reception.onSucessLogin(reception);
@@ -132,6 +135,14 @@ public class Reception {
 		System.out.println("Enter Oxygen Level");
 		int oxyLvl = sc.nextInt();
     	return manager.measureOxygenLevel(oxyLvl);
+	}
+	private String measureSleepingLevel() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your Age");
+		int age=sc.nextInt();
+		System.out.println("Enter your Sleeping hours");
+		int sleepHour=sc.nextInt();
+		return manager.measureSleepingLevel(age,sleepHour);
 	}
 
 }
