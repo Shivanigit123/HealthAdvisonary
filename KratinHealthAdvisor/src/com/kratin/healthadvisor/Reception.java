@@ -48,7 +48,7 @@ public class Reception {
 	}
 
 	String registration() {
-		String msg=null;
+		System.out.println("Enter your name");
 		Scanner sc = new Scanner(System.in);
 		String enteredName = sc.nextLine();
 		System.out.println("Enter your Date Of Birth");
@@ -107,7 +107,6 @@ public class Reception {
 			reception.onSucessLogin(reception);
 			break;
 		case 4:
-			System.out.println(reception.measureOxygenLevel());
 			reception.showMainMenu(reception);
 			break;
 		case 3:

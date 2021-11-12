@@ -16,14 +16,13 @@ public class Manager {
 	
 	public String addProfile(String name, String dOB, String password){
 		Date dob = dateUtil.convertStringToDate(dOB);
-		personId = personId+1;
-		
+		personId = personId+1;	
 		Person person = new Person(name, dob, personId, password);
 		System.out.println("In Register:"+person);
 		personRegister.put(personId, person);
-		//System.out.println("Register Size: "+personRegister.size());
-		//System.out.println("Show Registered detail obj : "+personRegister.get(personId));
-		return "Welcome "+person.getName().toUpperCase()+"\n You are successfully registered, Use your credentials for login below. \n LoginId : "+personId +" and password : "+password +"\n";
+		System.out.println("Register Size: "+personRegister.size());
+		System.out.println("Show Registered detail obj : "+personRegister.get(personId));
+		return "Welcome "+person.getName().toUpperCase()+"\n You are successfully registered Use your credentials for login below. \n LoginId : "+personId +" and password : "+password +"\n";
 	}
 	
 	public String deleteProfile(int loginId){
